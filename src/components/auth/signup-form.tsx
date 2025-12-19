@@ -51,8 +51,17 @@ export function SignUpForm() {
       });
       router.push('/admin');
       router.refresh();
-    } catch (err) {
-      setError('Failed to create account. Username or email may already exist.');
+    } catch (err: unknown) {
+      // Check if error message contains specific information
+      const errorMessage = (err as Error)?.message?.toLowerCase() || '';
+      
+      if (errorMessage.includes('name') || errorMessage.includes('username')) {
+        setError(`Username "@${username}" is already taken. Please choose another one.`);
+      } else if (errorMessage.includes('email')) {
+        setError('This email is already registered. Please sign in instead.');
+      } else {
+        setError('Failed to create account. Username or email may already exist.');
+      }
       console.error(err);
     } finally {
       setIsLoading(false);
