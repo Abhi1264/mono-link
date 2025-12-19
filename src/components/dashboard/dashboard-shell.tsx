@@ -187,7 +187,7 @@ export function DashboardShell({ user, links, stats }: DashboardShellProps) {
               <div className="space-y-1 sm:space-y-2">
                 <p className="text-xs text-neutral-500 tracking-wide uppercase">Profile</p>
                 <p className="text-sm font-medium mono-meta truncate">
-                  {user.name}.{process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'localhost:3000'}
+                  {process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'localhost:3000'}/{user.name}
                 </p>
                 <a
                   href={getProfileUrl(user.name)}

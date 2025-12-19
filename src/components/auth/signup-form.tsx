@@ -141,7 +141,7 @@ export function SignUpForm() {
                 />
               </div>
               <p className="text-xs mono-meta text-neutral-500">
-                {username || 'username'}.{process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'localhost:3000'}
+                {process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'localhost:3000'}/{username || 'username'}
               </p>
             </div>
 
