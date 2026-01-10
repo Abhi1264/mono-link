@@ -90,7 +90,7 @@ export default function Page() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-12 sm:pt-16 max-w-4xl mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-12 pt-12 sm:pt-16 max-w-6xl mx-auto px-4">
               {[
                 {
                   label: "Custom Subdomains",
@@ -110,7 +110,7 @@ export default function Page() {
               ].map((feature) => (
                 <div key={feature.label} className="space-y-1 sm:space-y-2">
                   <div
-                    className={`text-xl sm:text-2xl md:text-3xl font-bold ${
+                    className={`text-xl sm:text-2xl font-bold ${
                       feature.mono ? "mono-meta" : ""
                     }`}
                   >
