@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { LogOut } from 'lucide-react';
-import { signOut } from '@/lib/auth/client';
-import { useRouter } from 'next/navigation';
+import { Button } from "@/components/ui/button";
+import { LogOut } from "lucide-react";
+import { signOut } from "@/lib/auth/client";
+import { useRouter } from "next/navigation";
 
 export function SignOutButton() {
   const router = useRouter();
 
   const handleSignOut = async () => {
     await signOut();
-    router.push('/login');
+    router.push("/login");
   };
 
   return (
-    <Button 
-      variant="outline" 
-      size="sm" 
+    <Button
+      variant="outline"
+      size="sm"
       onClick={handleSignOut}
       className="w-full h-9 justify-start border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-sm"
     >

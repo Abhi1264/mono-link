@@ -78,7 +78,9 @@ export function SortableLink({ link }: SortableLinkProps) {
             {link.title}
           </h3>
           <div className="flex items-center gap-2 text-xs text-neutral-500">
-            <span className="mono-meta truncate max-w-[100px] sm:max-w-[200px]">{hostname}</span>
+            <span className="mono-meta truncate max-w-[100px] sm:max-w-[200px]">
+              {hostname}
+            </span>
             <span className="hidden xs:inline">·</span>
             <span className="mono-meta whitespace-nowrap">{link.clicks}</span>
           </div>
@@ -106,7 +108,11 @@ export function SortableLink({ link }: SortableLinkProps) {
             {isEnabled ? (
               <Eye size={16} strokeWidth={1.5} className="text-green-600" />
             ) : (
-              <EyeOff size={16} strokeWidth={1.5} className="text-neutral-400" />
+              <EyeOff
+                size={16}
+                strokeWidth={1.5}
+                className="text-neutral-400"
+              />
             )}
           </Button>
 

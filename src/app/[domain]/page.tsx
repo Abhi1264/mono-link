@@ -114,7 +114,7 @@ export default async function ProfilePage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold heading-tight">
               @{data.user.name}
             </h1>
-            
+
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm">
               <Link2 size={14} strokeWidth={1.5} />
               <span className="text-xs sm:text-sm mono-meta">
@@ -133,22 +133,24 @@ export default async function ProfilePage({ params }: PageProps) {
                 <ProfileLink link={firstLink} variant="featured" />
               </div>
             )}
-            
+
             {/* Rest of links in grid */}
             {restLinks.map((link) => (
-              <ProfileLink 
-                key={link.id} 
-                link={link} 
-                variant="standard"
-              />
+              <ProfileLink key={link.id} link={link} variant="standard" />
             ))}
           </div>
         ) : (
           <div className="border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 rounded-tight p-12 sm:p-16 text-center shadow-sm">
             <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
-              <Link2 size={24} className="sm:w-7 sm:h-7 text-neutral-400" strokeWidth={1.5} />
+              <Link2
+                size={24}
+                className="sm:w-7 sm:h-7 text-neutral-400"
+                strokeWidth={1.5}
+              />
             </div>
-            <h3 className="text-base sm:text-lg font-semibold mb-2">No links yet</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-2">
+              No links yet
+            </h3>
             <p className="text-sm text-neutral-500 dark:text-neutral-500">
               Check back soon!
             </p>

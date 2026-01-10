@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const ROOT_DOMAIN = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "localhost:3000";
 
-export function proxy(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   const url = req.nextUrl.clone();
   const hostname = req.headers.get("host") || "";
 
@@ -18,8 +18,11 @@ export function proxy(req: NextRequest) {
   }
 
   if (hostnameWithoutPort.endsWith(`.${rootDomainWithoutPort}`)) {
-    const subdomain = hostnameWithoutPort.replace(`.${rootDomainWithoutPort}`, "");
-    
+    const subdomain = hostnameWithoutPort.replace(
+      `.${rootDomainWithoutPort}`,
+      "",
+    );
+
     if (subdomain && subdomain !== hostnameWithoutPort) {
       url.pathname = `/${subdomain}${url.pathname}`;
       return NextResponse.rewrite(url);

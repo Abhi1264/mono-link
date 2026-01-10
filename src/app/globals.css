@@ -105,141 +105,149 @@
   .noise-bg {
     background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   }
-  
+
   /* Dot Pattern Background */
   .dot-pattern {
-    background-image: radial-gradient(circle, hsl(240 6% 90% / 0.3) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle,
+      hsl(240 6% 90% / 0.3) 1px,
+      transparent 1px
+    );
     background-size: 20px 20px;
   }
-  
+
   .dot-pattern-dark {
-    background-image: radial-gradient(circle, hsl(240 5% 18% / 0.5) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle,
+      hsl(240 5% 18% / 0.5) 1px,
+      transparent 1px
+    );
     background-size: 20px 20px;
   }
-  
+
   /* Precise Hover Lift */
   .hover-lift-subtle {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .hover-lift-subtle:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 4px 12px -2px hsl(240 10% 10% / 0.08);
   }
-  
+
   .dark .hover-lift-subtle:hover {
     box-shadow: 0 4px 12px -2px hsl(0 0% 0% / 0.4);
   }
-  
+
   /* Border Focus State */
   .border-focus {
     transition: border-color 0.2s ease;
   }
-  
+
   .border-focus:hover {
     border-color: hsl(240 10% 10%);
   }
-  
+
   .dark .border-focus:hover {
     border-color: hsl(0 0% 98%);
   }
-  
+
   /* Monospace Metadata */
   .mono-meta {
     font-family: var(--font-code);
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.01em;
   }
-  
+
   /* Glassmorphism 2.0 - Subtle Blur */
   .glass-refined {
     background: hsl(0 0% 100% / 0.8);
     backdrop-filter: blur(12px) saturate(120%);
     border: 1px solid hsl(240 6% 90% / 0.6);
   }
-  
+
   .dark .glass-refined {
     background: hsl(240 10% 8% / 0.8);
     backdrop-filter: blur(12px) saturate(120%);
     border: 1px solid hsl(240 5% 18% / 0.6);
   }
-  
+
   /* Bento Grid Variants */
   .bento-grid {
     display: grid;
     gap: 0.75rem;
     grid-template-columns: 1fr;
   }
-  
+
   @media (min-width: 640px) {
     .bento-grid {
       gap: 1rem;
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
+
   @media (min-width: 1024px) {
     .bento-grid {
       grid-template-columns: repeat(4, 1fr);
     }
   }
-  
+
   .bento-span-2 {
     grid-column: span 1;
   }
-  
+
   @media (min-width: 640px) {
     .bento-span-2 {
       grid-column: span 2;
     }
   }
-  
+
   .bento-span-full {
     grid-column: 1 / -1;
   }
-  
+
   /* Precise Typography */
   .heading-tight {
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
-  
+
   .tracking-precise {
     letter-spacing: -0.015em;
   }
-  
+
   /* Subtle Hover Shadow */
   .shadow-hover {
     box-shadow: 0 1px 2px 0 hsl(240 10% 10% / 0.05);
     transition: box-shadow 0.2s ease;
   }
-  
+
   .shadow-hover:hover {
     box-shadow: 0 4px 12px -2px hsl(240 10% 10% / 0.12);
   }
-  
+
   .dark .shadow-hover {
     box-shadow: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
   }
-  
+
   .dark .shadow-hover:hover {
     box-shadow: 0 4px 12px -2px hsl(0 0% 0% / 0.5);
   }
-  
+
   /* Slide-in Arrow */
   .arrow-slide {
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .group:hover .arrow-slide {
     transform: translate(4px, -4px);
   }
-  
+
   /* Tight Border Radius */
   .rounded-tight {
     border-radius: 0.5rem;
   }
-  
+
   /* Status Indicators */
   .status-dot {
     width: 6px;
@@ -247,7 +255,7 @@
     border-radius: 50%;
     display: inline-block;
   }
-  
+
   /* Sidebar Layout */
   .sidebar-layout {
     display: grid;
@@ -255,13 +263,13 @@
     gap: 0;
     min-height: 100vh;
   }
-  
+
   @media (max-width: 1024px) {
     .sidebar-layout {
       grid-template-columns: 1fr;
     }
   }
-  
+
   /* Floating Action Bar */
   .floating-bar {
     position: fixed;

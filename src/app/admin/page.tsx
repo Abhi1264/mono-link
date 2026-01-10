@@ -17,12 +17,12 @@ export default async function AdminPage() {
   const totalClicks = links.reduce((sum, link) => sum + link.clicks, 0);
 
   return (
-    <DashboardShell 
-      user={session.user} 
+    <DashboardShell
+      user={session.user}
       links={links}
       stats={{
         totalLinks: links.length,
-        enabledLinks: links.filter(l => l.isEnabled).length,
+        enabledLinks: links.filter((l) => l.isEnabled).length,
         totalClicks,
       }}
     />

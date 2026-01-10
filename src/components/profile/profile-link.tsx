@@ -1,25 +1,24 @@
-'use client';
+"use client";
 
-import { Link as LinkType } from '@/lib/db/schema';
-import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Link as LinkType } from "@/lib/db/schema";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 interface ProfileLinkProps {
   link: LinkType;
-  variant?: 'compact' | 'featured' | 'standard';
+  variant?: "compact" | "featured" | "standard";
 }
 
-export function ProfileLink({ link, variant = 'standard' }: ProfileLinkProps) {
+export function ProfileLink({ link, variant = "standard" }: ProfileLinkProps) {
   const handleClick = () => {
     if (navigator.sendBeacon) {
-      const blob = new Blob(
-        [JSON.stringify({ linkId: link.id })],
-        { type: 'application/json' }
-      );
-      navigator.sendBeacon('/api/track-click', blob);
+      const blob = new Blob([JSON.stringify({ linkId: link.id })], {
+        type: "application/json",
+      });
+      navigator.sendBeacon("/api/track-click", blob);
     } else {
-      fetch('/api/track-click', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      fetch("/api/track-click", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ linkId: link.id }),
         keepalive: true,
       }).catch(() => {});
@@ -28,14 +27,14 @@ export function ProfileLink({ link, variant = 'standard' }: ProfileLinkProps) {
 
   const hostname = (() => {
     try {
-      return new URL(link.url).hostname.replace('www.', '');
+      return new URL(link.url).hostname.replace("www.", "");
     } catch {
       return link.url;
     }
   })();
 
   // Featured variant - spans 2 columns
-  if (variant === 'featured') {
+  if (variant === "featured") {
     return (
       <a
         href={link.url}
@@ -54,9 +53,9 @@ export function ProfileLink({ link, variant = 'standard' }: ProfileLinkProps) {
                 {hostname}
               </p>
             </div>
-            <ArrowUpRight 
-              size={20} 
-              className="sm:w-6 sm:h-6 text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 arrow-slide transition-colors flex-shrink-0" 
+            <ArrowUpRight
+              size={20}
+              className="sm:w-6 sm:h-6 text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 arrow-slide transition-colors flex-shrink-0"
               strokeWidth={1.5}
             />
           </div>
@@ -66,7 +65,7 @@ export function ProfileLink({ link, variant = 'standard' }: ProfileLinkProps) {
   }
 
   // Compact variant
-  if (variant === 'compact') {
+  if (variant === "compact") {
     return (
       <a
         href={link.url}
@@ -80,9 +79,9 @@ export function ProfileLink({ link, variant = 'standard' }: ProfileLinkProps) {
             <span className="font-medium text-sm truncate tracking-precise">
               {link.title}
             </span>
-            <ExternalLink 
-              size={16} 
-              className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 transition-colors shrink-0" 
+            <ExternalLink
+              size={16}
+              className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 transition-colors shrink-0"
               strokeWidth={1.5}
             />
           </div>
@@ -110,9 +109,9 @@ export function ProfileLink({ link, variant = 'standard' }: ProfileLinkProps) {
               {hostname}
             </p>
           </div>
-          <ArrowUpRight 
-            size={18} 
-            className="sm:w-5 sm:h-5 text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 arrow-slide transition-colors shrink-0" 
+          <ArrowUpRight
+            size={18}
+            className="sm:w-5 sm:h-5 text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-50 arrow-slide transition-colors shrink-0"
             strokeWidth={1.5}
           />
         </div>
