@@ -90,20 +90,34 @@ export default function Page() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-12 sm:pt-16 max-w-2xl mx-auto px-4">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-12 sm:pt-16 max-w-4xl mx-auto px-4">
               {[
-                { label: "Active Users", value: "10,000+", mono: false },
-                { label: "Total Clicks", value: "1.2M+", mono: true },
-                { label: "Uptime", value: "99.9%", mono: true },
-              ].map((stat) => (
-                <div key={stat.label} className="space-y-1 sm:space-y-2">
+                {
+                  label: "Custom Subdomains",
+                  value: "yourname.site.com",
+                  mono: true,
+                },
+                {
+                  label: "Drag & Drop Editor",
+                  value: "Reorder Instantly",
+                  mono: false,
+                },
+                {
+                  label: "Built-in Analytics",
+                  value: "Real-time clicks",
+                  mono: false,
+                },
+              ].map((feature) => (
+                <div key={feature.label} className="space-y-1 sm:space-y-2">
                   <div
-                    className={`text-xl sm:text-2xl md:text-3xl font-bold ${stat.mono ? "mono-meta" : ""}`}
+                    className={`text-xl sm:text-2xl md:text-3xl font-bold ${
+                      feature.mono ? "mono-meta" : ""
+                    }`}
                   >
-                    {stat.value}
+                    {feature.value}
                   </div>
                   <div className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-                    {stat.label}
+                    {feature.label}
                   </div>
                 </div>
               ))}
@@ -201,7 +215,9 @@ export default function Page() {
                 size={18}
                 className="sm:w-5 sm:h-5 text-neutral-900 dark:text-neutral-50"
               />
-              <span className="text-sm sm:text-base font-semibold">Onelink</span>
+              <span className="text-sm sm:text-base font-semibold">
+                Onelink
+              </span>
             </div>
             <a
               href="https://github.com/Abhi1264/onelink"
