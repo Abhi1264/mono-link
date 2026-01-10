@@ -99,7 +99,7 @@ export function SignUpForm() {
         className="fixed top-6 left-6 flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors z-10"
       >
         <Link2 size={20} strokeWidth={1.5} />
-        <span className="text-sm font-medium">Zylink</span>
+        <span className="text-sm font-medium">Onelink</span>
       </Link>
 
       {/* Theme Toggle */}
@@ -124,7 +124,7 @@ export function SignUpForm() {
                 Create Account
               </h1>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                Get started with Zylink
+                Get started with Onelink
               </p>
             </div>
           </div>

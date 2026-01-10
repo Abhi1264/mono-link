@@ -1,6 +1,6 @@
-# Contributing to Zylink
+# Contributing to Onelink
 
-Thank you for your interest in contributing to Zylink! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to Onelink! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -43,7 +43,7 @@ For feature requests, open an issue with:
 1. **Fork the repository**
 
 ```bash
-gh repo fork your-username/zylink --clone
+gh repo fork your-username/onelink --clone
 ```
 
 2. **Create a branch**
@@ -230,4 +230,4 @@ Contributors will be:
 
 ## Thank You!
 
-Your contributions make Zylink better for everyone. We appreciate your time and effort! 🎉
+Your contributions make Onelink better for everyone. We appreciate your time and effort! 🎉

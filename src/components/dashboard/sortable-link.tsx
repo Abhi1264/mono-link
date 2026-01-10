@@ -2,6 +2,7 @@
 
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { useRouter } from "next/navigation";
 import { Link } from "@/lib/db/schema";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -14,6 +15,7 @@ interface SortableLinkProps {
 }
 
 export function SortableLink({ link }: SortableLinkProps) {
+  const router = useRouter();
   const [isEnabled, setIsEnabled] = useState(link.isEnabled);
   const {
     attributes,
@@ -34,11 +36,13 @@ export function SortableLink({ link }: SortableLinkProps) {
     const newState = !isEnabled;
     setIsEnabled(newState);
     await updateLink(link.id, { isEnabled: newState });
+    router.refresh();
   };
 
   const handleDelete = async () => {
     if (confirm("Delete this link? This action cannot be undone.")) {
       await deleteLink(link.id);
+      router.refresh();
     }
   };
 

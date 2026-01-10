@@ -26,12 +26,12 @@ export default function Page() {
               strokeWidth={2}
             />
             <span className="text-base sm:text-lg font-semibold tracking-precise">
-              Zylink
+              Onelink
             </span>
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="https://github.com/Abhi1264/zylink"
+              href="https://github.com/Abhi1264/onelink"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"
@@ -201,10 +201,10 @@ export default function Page() {
                 size={18}
                 className="sm:w-5 sm:h-5 text-neutral-900 dark:text-neutral-50"
               />
-              <span className="text-sm sm:text-base font-semibold">Zylink</span>
+              <span className="text-sm sm:text-base font-semibold">Onelink</span>
             </div>
             <a
-              href="https://github.com/Abhi1264/zylink"
+              href="https://github.com/Abhi1264/onelink"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors text-sm"
@@ -213,7 +213,7 @@ export default function Page() {
               <span>View on GitHub</span>
             </a>
             <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-              &copy; 2025 Zylink. Built with precision.
+              &copy; 2025 Onelink. Built with precision.
             </p>
           </div>
         </div>

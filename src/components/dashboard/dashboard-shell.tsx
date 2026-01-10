@@ -66,7 +66,7 @@ export function DashboardShell({ user, links, stats }: DashboardShellProps) {
               <span
                 className={`font-semibold text-lg tracking-precise transition-opacity duration-300 ${sidebarCollapsed ? "lg:opacity-0 lg:hidden" : "opacity-100"}`}
               >
-                Zylink
+                Onelink
               </span>
             </div>
 
@@ -188,7 +188,7 @@ export function DashboardShell({ user, links, stats }: DashboardShellProps) {
 
             <div className="flex items-center gap-2">
               <a
-                href="https://github.com/Abhi1264/zylink"
+                href="https://github.com/Abhi1264/onelink"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,6 +10,7 @@ import { createLink } from "@/app/actions/links";
 import { Plus, X } from "lucide-react";
 
 export function CreateLinkForm() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -23,6 +25,7 @@ export function CreateLinkForm() {
       setTitle("");
       setUrl("");
       setIsOpen(false);
+      router.refresh();
     } catch (error) {
       console.error("Failed to create link:", error);
     } finally {
